@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background: url("/images/bg.jpg");
+    background: url("../images/bg.jpg");
     background-repeat: repeat;
 }
 main{
@@ -20,15 +20,15 @@ main{
     height: 45vh;
 }
 .char_img{
-    height: 300px;
+    height: 280px;
     display: block;
 }
 .character img:hover{
     cursor: pointer;
-    height: 400px;
+    height: 300px;
 }
 #lukan{
-    height: 500px;
+    height: 360px;
 }
 #trainingCenter{
     height: 37vh;
@@ -45,7 +45,7 @@ main{
     width: 1400px;
 }
 .active{
-    height: 500px;
+    height: 380px;
     display: block;
     margin: 0 100px;
 }
