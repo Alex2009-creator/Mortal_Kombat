@@ -9,20 +9,25 @@
 </head>
 <body>
     <main>
-        <div class="continue_game"><button type="button" onclick="continueGame()">Продолжить игру</button></div>
-        <section class="character">            
-            <img class="char_img" src="./images/Riden.png" alt="Райден" title="Выбрать противника Райден" onclick='selectCharacter("Райден")'>
-            <img class="char_img" src="./images/Sub_Zero.png" alt="Саб-Зиро" title="Выбрать противника Саб-Зиро" onclick='selectCharacter("Саб-Зиро")'>
+        <div >
+            <h1>Mortal Kombat</h1>
+            <button class="continue_game novisible" id = "btn_continue" type="button" onclick="continueGame()">Продолжить игру</button>
+            <button class="continue_game" id = "btn_start" type="button" onclick="runGame()">Начать игру</button>
+        
+        </div>
+        <section class="character ">            
+            <img class="char_img novisible" src="./images/Riden.png" alt="Райден" title="Выбрать противника Райден" onclick='selectCharacter("Райден")'>
+            <img class="char_img novisible" src="./images/Sub_Zero.png" alt="Саб-Зиро" title="Выбрать противника Саб-Зиро" onclick='selectCharacter("Саб-Зиро")'>
             <img id="lukan" src="./images/LuKan.png" alt="Лю Кан" title="Показать информацию о бойцах"  onclick='showInformation()'>
-            <img class="char_img" src="./images/Scorpion.png" alt="Scorpion" title="Выбрать противника Скорпион" onclick='selectCharacter("Скорпион")'>
-            <img class="char_img" src="./images/Shao-Kan.png" alt="Shao-Kan" title="Выбрать противника Шао Кан" onclick='selectCharacter("Шао Кан")'>
+            <img class="char_img novisible" src="./images/Scorpion.png" alt="Scorpion" title="Выбрать противника Скорпион" onclick='selectCharacter("Скорпион")'>
+            <img class="char_img novisible" src="./images/Shao-Kan.png" alt="Shao-Kan" title="Выбрать противника Шао Кан" onclick='selectCharacter("Шао Кан")'>
         </section>
         <section class="conclusion">
-            <div class="conclusion_char"></div>
-            <div class="conclusion_char"></div>
-            <div class="conclusion_char"></div>
-            <div class="conclusion_char"></div>
-            <div class="conclusion_char"></div>
+            <div class="conclusion_char novisible"></div>
+            <div class="conclusion_char novisible"></div>
+            <div class="conclusion_char novisible"></div>
+            <div class="conclusion_char novisible"></div>
+            <div class="conclusion_char novisible"></div>
         </section>
 
         <section id="trainingCenter">

@@ -1,6 +1,23 @@
-let groupCharacter = document.querySelectorAll(".character > img");
-let textBlock = document.querySelectorAll(".conclusion_char");
+let groupCharacter = document.querySelectorAll(".character > img"); // массив персонажей
+let textBlock = document.querySelectorAll(".conclusion_char"); // массив текстовых блоков
 let str = ''; // Вывод результата
+let btnStart = document.querySelector('#btn_start'); // кнопка "Начать игру"
+let btnContinue = document.querySelector('#btn_continue'); // кнопка "Продолжить игру"
+let headingGame = document.querySelector('h1');
+
+// старт игры
+runGame = function() {
+    headingGame.classList.add('novisible');
+    btnStart.classList.add('novisible');
+
+    for (let index of groupCharacter) {
+        index.classList.remove('novisible');
+    };
+
+    for (let index of textBlock) {
+        index.classList.remove('novisible');
+    }
+}
 
 // создание персонажа
 createCharacter = function(name, cash, skills, power, speed, vitality) {
@@ -45,6 +62,7 @@ let trainingCenter = [ // массив с видами подготовки
     createTrained("Дополнительное оснащение", 30),
 ];
 
+let charNovisible = [];
 // оплатить и получить подготовку
 getTrained = function() {
 
@@ -113,7 +131,8 @@ showCharacter = function(numValue) {
                     groupCharacter[i].classList.add("novisible");
                 }
         i++; 
-    }  
+    }
+    btnContinue.classList.remove('novisible');  
 };
 
 // расчет поединка
@@ -148,7 +167,14 @@ calculateFight = function (curentOpponent) {
         curentOpponent.skills = 0;
         curentOpponent.power = 0;
         curentOpponent.speed = 0;
-        curentOpponent.vitality = 0;       
+        curentOpponent.vitality = 0;
+
+        groupCharacter[enemyIndex].classList.add('novisible');
+
+        charNovisible.push(groupCharacter[enemyIndex]); // добавление проигравшего противника в массив побежденных персонажей
+
+        textBlock[enemyIndex].classList.add('novisible');
+           
         
     }
     else if (lu_Kan.remnantVitality == curentOpponent.remnantVitality) {
@@ -160,7 +186,10 @@ calculateFight = function (curentOpponent) {
         alert(lu_Kan.name + " проиграл поединок");
         lu_Kan.vitality = (lu_Kan.remnantVitality).toFixed();
         curentOpponent.vitality = (curentOpponent.remnantVitality).toFixed();
-        console.log("Лю Кан " + lu_Kan.vitality + " " + curentOpponent.name + " " + curentOpponent.vitality);
+
+        groupCharacter[2].classList.add('novisible');
+        textBlock[2].classList.add('novisible');
+  
     }
 
 }
@@ -188,13 +217,21 @@ function continueGame() {
     let i = 0;
     for (let index of groupCharacter) {
         if(i == enemyIndex || i == 2) {
-                    groupCharacter[i].classList.remove("active");
-                }
-                else {
-                    groupCharacter[i].classList.remove("novisible");
-                }
+            groupCharacter[i].classList.remove("active");
+        }
         i++; 
-    }
+    };
+
+    i = 0;
+    let val;
+
+    for (let index of groupCharacter) {
+        val = charNovisible.indexOf(index); // проверка на наличие в массиве побежденных персонажей
+        if (val == -1) {
+            groupCharacter[i].classList.remove("novisible");
+        };
+        i++; 
+    };
 
     showInformation();
 
