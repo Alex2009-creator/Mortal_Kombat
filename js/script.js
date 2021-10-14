@@ -1,14 +1,34 @@
-let groupCharacter = document.querySelectorAll(".character > img"); // массив персонажей
-let textBlock = document.querySelectorAll(".conclusion_char"); // массив текстовых блоков
-let str = ''; // Вывод результата
-let btnStart = document.querySelector('#btn_start'); // кнопка "Начать игру"
-let btnContinue = document.querySelector('#btn_continue'); // кнопка "Продолжить игру"
-let headingGame = document.querySelector('h1');
+let groupCharacter = document.querySelectorAll(".character > img"), // массив персонажей
+    textBlock = document.querySelectorAll(".conclusion_char"), // массив текстовых блоков
+    str = '', // Вывод результата
+    btnStart = document.querySelector('#btn_start'), // кнопка "Начать игру"
+    btnContinue = document.querySelector('#btn_continue'), // кнопка "Продолжить игру"
+    btnDescription = document.querySelector('#btn_description'), // кнопка "Описание игры"
+    windowDescription = document.querySelector('#description'), // окно описания
+    headingGame = document.querySelector('h1'); // заголовок
+    let flag = 1;
+
+// описание игры
+btnDescription.addEventListener('click', function() {    
+    if (flag == 1) {
+        windowDescription.style.display = 'block';
+        flag = (-1) * flag;
+        console.log(flag);
+    }
+    else {
+        windowDescription.style.display = 'none';
+        flag = (-1) * flag;
+        console.log(flag);
+    }
+    
+}, false);
 
 // старт игры
 runGame = function() {
     headingGame.classList.add('novisible');
     btnStart.classList.add('novisible');
+    btnDescription.classList.add('novisible');
+    windowDescription.style.display = 'none';
 
     for (let index of groupCharacter) {
         index.classList.remove('novisible');
@@ -124,12 +144,14 @@ function selectCharacter(nameChar) {
 showCharacter = function(numValue) {
     let i = 0;
     for (let index of groupCharacter) {
+        groupCharacter[i].classList.add("novisible");
         if(i == numValue || i == 2) {
                     groupCharacter[i].classList.add("active");
+                    groupCharacter[i].classList.remove("novisible");
                 }
-                else {
-                    groupCharacter[i].classList.add("novisible");
-                }
+                // else {
+                //     groupCharacter[i].classList.add("novisible");
+                // }
         i++; 
     }
     btnContinue.classList.remove('novisible');  

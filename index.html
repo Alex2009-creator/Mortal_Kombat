@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,39 @@
     <title>Мортал Комбат</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <main>
-        <div >
-            <h1>Mortal Kombat</h1>
-            <button class="continue_game novisible" id = "btn_continue" type="button" onclick="continueGame()">Продолжить игру</button>
-            <button class="continue_game" id = "btn_start" type="button" onclick="runGame()">Начать игру</button>
-        
+        <div>
+            <h1>M Kombat</h1>
+            <button class="continue_game novisible" id="btn_continue" type="button" onclick="continueGame()">Продолжить
+                игру</button>
+            <button class="continue_game" id="btn_start" type="button" onclick="runGame()">Начать игру</button>
+            <button class="continue_game" id="btn_description" type="button">Описание игры</button>
+            <div id="description">
+                <p>M Kombat – логическая игра, упрощенная версия известного Mortal Kombat. Правила игры следующие.
+                   Всего в игре участвуют пять персонажей. Главный герой Лю Кан, которым Вам предстоит управлять, в
+                   своем распоряжении имеет минимум возможностей. При этом победа над противником, дает Вам возможность
+                   получить его силы. Но чтобы одержать победу над более сильными соперниками, Лю Кан должен правильно
+                   выстроить стратегию. Для этого нужно посещать центр подготовки (клик на картинке в нижней части
+                   экрана), где за имеющиеся средства можно увеличить свои силы.</p>
+                <p>Важно правильно выстроить поединки и выбирать сначала более слабых противников, постепенно наращивая
+                   свои силы. Для просмотра возможностей всех персонажей, необходимо кликнуть на изображении Лю Кана (в
+                   окнах под каждым персонажем отобразится вся информация). Вы являетесь победителем, если Вашему
+                   персонажу удастся преодолеть всех противников.</p>
+            </div>
         </div>
-        <section class="character ">            
-            <img class="char_img novisible" src="./images/Riden.png" alt="Райден" title="Выбрать противника Райден" onclick='selectCharacter("Райден")'>
-            <img class="char_img novisible" src="./images/Sub_Zero.png" alt="Саб-Зиро" title="Выбрать противника Саб-Зиро" onclick='selectCharacter("Саб-Зиро")'>
-            <img id="lukan" src="./images/LuKan.png" alt="Лю Кан" title="Показать информацию о бойцах"  onclick='showInformation()'>
-            <img class="char_img novisible" src="./images/Scorpion.png" alt="Scorpion" title="Выбрать противника Скорпион" onclick='selectCharacter("Скорпион")'>
-            <img class="char_img novisible" src="./images/Shao-Kan.png" alt="Shao-Kan" title="Выбрать противника Шао Кан" onclick='selectCharacter("Шао Кан")'>
+        <section class="character ">
+            <img class="char_img novisible" src="./images/Riden.png" alt="Райден" title="Выбрать противника Райден"
+                onclick='selectCharacter("Райден")'>
+            <img class="char_img novisible" src="./images/Sub_Zero.png" alt="Саб-Зиро"
+                title="Выбрать противника Саб-Зиро" onclick='selectCharacter("Саб-Зиро")'>
+            <img id="lukan" src="./images/LuKan.png" alt="Лю Кан" title="Показать информацию о бойцах"
+                onclick='showInformation()'>
+            <img class="char_img novisible" src="./images/Scorpion.png" alt="Scorpion"
+                title="Выбрать противника Скорпион" onclick='selectCharacter("Скорпион")'>
+            <img class="char_img novisible" src="./images/Shao-Kan.png" alt="Shao-Kan"
+                title="Выбрать противника Шао Кан" onclick='selectCharacter("Шао Кан")'>
         </section>
         <section class="conclusion">
             <div class="conclusion_char novisible"></div>
@@ -31,10 +51,12 @@
         </section>
 
         <section id="trainingCenter">
-            <img src="./images/centertrainingmortal.gif" alt="Центр подготовки" title="Оплатить дополнительную подготовку" onclick='getTrained()'>
+            <img src="./images/centertrainingmortal.gif" alt="Центр подготовки"
+                title="Оплатить дополнительную подготовку" onclick='getTrained()'>
         </section>
     </main>
 
- <script src="./js/script.js"></script>   
+    <script src="./js/script.js"></script>
 </body>
+
 </html>

@@ -71,7 +71,7 @@ main{
 }
 .conclusion_char{
     width: 200px;
-    height: 200px;
+    height: 180px;
     background-color: cornsilk;
     border: blue 2px solid;
     border-radius: 10px;
@@ -84,7 +84,7 @@ main{
 .conclusion_char p{
     padding-left: 10px;
     line-height: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 .continue_game{
     position: absolute;
@@ -98,4 +98,26 @@ main{
 }
 .continue_game:hover{
     cursor: pointer;
+}
+#description{
+    width: 800px;
+    height: auto;
+    background-color: cornsilk;
+    color: darkblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    display: none;    
+}
+#description p{
+    padding: 5px;
+    text-align: justify;
+}
+#btn_description{
+    top: 10%;
+    left: 50%; 
+    transform: translateX(-50%);
 }
